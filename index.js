@@ -126,7 +126,7 @@ module.exports = function supervalk(mod) {
 		runes = event.runemarksAdded
 	})	
 	
-	mod.hook('S_SKILL_CATEGORY', 4, event => {
+	mod.hook('S_SKILL_CATEGORY', 3, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'glaiver') return
 		if(event.category==category) {
@@ -298,12 +298,12 @@ module.exports = function supervalk(mod) {
 		}		
 		
 	})
-	mod.hook('S_EACH_SKILL_RESULT', 15, event => {
+	mod.hook('S_EACH_SKILL_RESULT', 14, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'glaiver') return		
 	})	
 
-	mod.hook('S_SPAWN_NPC', 12, event => {
+	mod.hook('S_SPAWN_NPC', 11, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'glaiver') return		
 		monsters.push({ gameId: event.gameId, loc: event.loc, w: event.w })
@@ -411,7 +411,7 @@ module.exports = function supervalk(mod) {
 		if(event.skill.id==leaping_id + 1) isCD_leaping = true
 	})			
 	
-	mod.hook('S_PLAYER_STAT_UPDATE', 17, event => {
+	mod.hook('S_PLAYER_STAT_UPDATE', 14, event => {
 		if(!enabled) return
 		if(mod.game.me.class !== 'glaiver') return
 	})	
